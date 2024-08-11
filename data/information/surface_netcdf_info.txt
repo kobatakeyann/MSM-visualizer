@@ -1,0 +1,268 @@
+see http://database.rish.kyoto-u.ac.jp/arch/jmadata/data/gpv/netcdf/README
+
+################### Overview ###################
+<< dimension infomation >>
+FrozenMappingWarningOnValuesAccess({'lon': 481, 'lat': 505, 'time': 24, 'ref_time': 8}) 
+
+<< coordinate infomation >>
+Coordinates:
+  * lon       (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat       (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time      (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+  * ref_time  (ref_time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00 
+
+<< variables infomation >>
+Data variables:
+    psea        (time, lat, lon) float64 47MB ...
+    sp          (time, lat, lon) float64 47MB ...
+    u           (time, lat, lon) float64 47MB ...
+    v           (time, lat, lon) float64 47MB ...
+    temp        (time, lat, lon) float64 47MB ...
+    rh          (time, lat, lon) float64 47MB ...
+    r1h         (time, lat, lon) float64 47MB ...
+    ncld_upper  (time, lat, lon) float64 47MB ...
+    ncld_mid    (time, lat, lon) float64 47MB ...
+    ncld_low    (time, lat, lon) float64 47MB ...
+    ncld        (time, lat, lon) float64 47MB ...
+    dswrf       (time, lat, lon) float64 47MB ... 
+
+
+################### Detail ###################
+<< dimension infomation >>
+
+<xarray.DataArray 'lon' (lon: 481)> Size: 2kB
+array([120.    , 120.0625, 120.125 , ..., 149.875 , 149.9375, 150.    ],
+      dtype=float32)
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+Attributes:
+    long_name:      longitude
+    units:          degrees_east
+    standard_name:  longitude 
+
+<xarray.DataArray 'lat' (lat: 505)> Size: 2kB
+array([47.6 , 47.55, 47.5 , ..., 22.5 , 22.45, 22.4 ], dtype=float32)
+Coordinates:
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+Attributes:
+    long_name:      latitude
+    units:          degrees_north
+    standard_name:  latitude 
+
+<xarray.DataArray 'time' (time: 24)> Size: 192B
+array(['2023-08-21T00:00:00.000000000', '2023-08-21T01:00:00.000000000',
+       '2023-08-21T02:00:00.000000000', '2023-08-21T03:00:00.000000000',
+       '2023-08-21T04:00:00.000000000', '2023-08-21T05:00:00.000000000',
+       '2023-08-21T06:00:00.000000000', '2023-08-21T07:00:00.000000000',
+       '2023-08-21T08:00:00.000000000', '2023-08-21T09:00:00.000000000',
+       '2023-08-21T10:00:00.000000000', '2023-08-21T11:00:00.000000000',
+       '2023-08-21T12:00:00.000000000', '2023-08-21T13:00:00.000000000',
+       '2023-08-21T14:00:00.000000000', '2023-08-21T15:00:00.000000000',
+       '2023-08-21T16:00:00.000000000', '2023-08-21T17:00:00.000000000',
+       '2023-08-21T18:00:00.000000000', '2023-08-21T19:00:00.000000000',
+       '2023-08-21T20:00:00.000000000', '2023-08-21T21:00:00.000000000',
+       '2023-08-21T22:00:00.000000000', '2023-08-21T23:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      time
+    standard_name:  time 
+
+<xarray.DataArray 'ref_time' (ref_time: 8)> Size: 64B
+array(['2023-08-21T00:00:00.000000000', '2023-08-21T03:00:00.000000000',
+       '2023-08-21T06:00:00.000000000', '2023-08-21T09:00:00.000000000',
+       '2023-08-21T12:00:00.000000000', '2023-08-21T15:00:00.000000000',
+       '2023-08-21T18:00:00.000000000', '2023-08-21T21:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * ref_time  (ref_time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      forecaset reference time
+    standard_name:  forecaset_reference_time 
+
+
+<< coordinate infomation >>
+
+<xarray.DataArray 'lon' (lon: 481)> Size: 2kB
+array([120.    , 120.0625, 120.125 , ..., 149.875 , 149.9375, 150.    ],
+      dtype=float32)
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+Attributes:
+    long_name:      longitude
+    units:          degrees_east
+    standard_name:  longitude 
+
+<xarray.DataArray 'lat' (lat: 505)> Size: 2kB
+array([47.6 , 47.55, 47.5 , ..., 22.5 , 22.45, 22.4 ], dtype=float32)
+Coordinates:
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+Attributes:
+    long_name:      latitude
+    units:          degrees_north
+    standard_name:  latitude 
+
+<xarray.DataArray 'time' (time: 24)> Size: 192B
+array(['2023-08-21T00:00:00.000000000', '2023-08-21T01:00:00.000000000',
+       '2023-08-21T02:00:00.000000000', '2023-08-21T03:00:00.000000000',
+       '2023-08-21T04:00:00.000000000', '2023-08-21T05:00:00.000000000',
+       '2023-08-21T06:00:00.000000000', '2023-08-21T07:00:00.000000000',
+       '2023-08-21T08:00:00.000000000', '2023-08-21T09:00:00.000000000',
+       '2023-08-21T10:00:00.000000000', '2023-08-21T11:00:00.000000000',
+       '2023-08-21T12:00:00.000000000', '2023-08-21T13:00:00.000000000',
+       '2023-08-21T14:00:00.000000000', '2023-08-21T15:00:00.000000000',
+       '2023-08-21T16:00:00.000000000', '2023-08-21T17:00:00.000000000',
+       '2023-08-21T18:00:00.000000000', '2023-08-21T19:00:00.000000000',
+       '2023-08-21T20:00:00.000000000', '2023-08-21T21:00:00.000000000',
+       '2023-08-21T22:00:00.000000000', '2023-08-21T23:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      time
+    standard_name:  time 
+
+<xarray.DataArray 'ref_time' (ref_time: 8)> Size: 64B
+array(['2023-08-21T00:00:00.000000000', '2023-08-21T03:00:00.000000000',
+       '2023-08-21T06:00:00.000000000', '2023-08-21T09:00:00.000000000',
+       '2023-08-21T12:00:00.000000000', '2023-08-21T15:00:00.000000000',
+       '2023-08-21T18:00:00.000000000', '2023-08-21T21:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * ref_time  (ref_time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      forecaset reference time
+    standard_name:  forecaset_reference_time 
+
+
+<< variables infomation >>
+
+<xarray.DataArray 'psea' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      sea level pressure
+    units:          Pa
+    standard_name:  air_pressure 
+
+<xarray.DataArray 'sp' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      surface air pressure
+    units:          Pa
+    standard_name:  surface_air_pressure 
+
+<xarray.DataArray 'u' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      eastward component of wind
+    units:          m/s
+    standard_name:  eastward_wind 
+
+<xarray.DataArray 'v' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      northward component of wind
+    units:          m/s
+    standard_name:  northward_wind 
+
+<xarray.DataArray 'temp' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      temperature
+    units:          K
+    standard_name:  air_temperature 
+
+<xarray.DataArray 'rh' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      relative humidity
+    units:          %
+    standard_name:  relative_humidity 
+
+<xarray.DataArray 'r1h' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      rainfall in 1 hour
+    units:          mm/h
+    standard_name:  rainfall_rate 
+
+<xarray.DataArray 'ncld_upper' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:  upper-level cloudiness
+    units:      % 
+
+<xarray.DataArray 'ncld_mid' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:  mid-level cloudiness
+    units:      % 
+
+<xarray.DataArray 'ncld_low' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:  low-level cloudiness
+    units:      % 
+
+<xarray.DataArray 'ncld' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      cloud amount
+    units:          %
+    standard_name:  cloud_area_fraction 
+
+<xarray.DataArray 'dswrf' (time: 24, lat: 505, lon: 481)> Size: 47MB
+[5829720 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 2kB 120.0 120.1 120.1 120.2 ... 149.9 149.9 150.0
+  * lat      (lat) float32 2kB 47.6 47.55 47.5 47.45 ... 22.55 22.5 22.45 22.4
+  * time     (time) datetime64[ns] 192B 2023-08-21 ... 2023-08-21T23:00:00
+Attributes:
+    long_name:      Downward Short-Wave Radiation Flux
+    units:          W/m^2
+    standard_name:  surface_net_downward_shortwave_flux 

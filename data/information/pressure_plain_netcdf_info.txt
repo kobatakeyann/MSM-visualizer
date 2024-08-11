@@ -1,0 +1,185 @@
+see http://database.rish.kyoto-u.ac.jp/arch/jmadata/data/gpv/netcdf/README
+
+################### Overview ###################
+<< dimension infomation >>
+FrozenMappingWarningOnValuesAccess({'lon': 241, 'lat': 253, 'p': 16, 'time': 8}) 
+
+<< coordinate infomation >>
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00 
+
+<< variables infomation >>
+Data variables:
+    z        (time, p, lat, lon) float64 62MB ...
+    w        (time, p, lat, lon) float64 62MB ...
+    u        (time, p, lat, lon) float64 62MB ...
+    v        (time, p, lat, lon) float64 62MB ...
+    temp     (time, p, lat, lon) float64 62MB ...
+    rh       (time, p, lat, lon) float64 62MB ... 
+
+
+################### Detail ###################
+<< dimension infomation >>
+
+<xarray.DataArray 'lon' (lon: 241)> Size: 964B
+array([120.   , 120.125, 120.25 , ..., 149.75 , 149.875, 150.   ],
+      dtype=float32)
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+Attributes:
+    long_name:      longitude
+    units:          degrees_east
+    standard_name:  longitude 
+
+<xarray.DataArray 'lat' (lat: 253)> Size: 1kB
+array([47.6, 47.5, 47.4, ..., 22.6, 22.5, 22.4], dtype=float32)
+Coordinates:
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+Attributes:
+    long_name:      latitude
+    units:          degrees_north
+    standard_name:  latitude 
+
+<xarray.DataArray 'p' (p: 16)> Size: 64B
+array([1000.,  975.,  950.,  925.,  900.,  850.,  800.,  700.,  600.,  500.,
+        400.,  300.,  250.,  200.,  150.,  100.], dtype=float32)
+Coordinates:
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+Attributes:
+    long_name:      pressure level
+    standard_name:  air_pressure
+    units:          hPa 
+
+<xarray.DataArray 'time' (time: 8)> Size: 64B
+array(['2023-08-21T00:00:00.000000000', '2023-08-21T03:00:00.000000000',
+       '2023-08-21T06:00:00.000000000', '2023-08-21T09:00:00.000000000',
+       '2023-08-21T12:00:00.000000000', '2023-08-21T15:00:00.000000000',
+       '2023-08-21T18:00:00.000000000', '2023-08-21T21:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      time
+    standard_name:  time 
+
+
+<< coordinate infomation >>
+
+<xarray.DataArray 'lon' (lon: 241)> Size: 964B
+array([120.   , 120.125, 120.25 , ..., 149.75 , 149.875, 150.   ],
+      dtype=float32)
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+Attributes:
+    long_name:      longitude
+    units:          degrees_east
+    standard_name:  longitude 
+
+<xarray.DataArray 'lat' (lat: 253)> Size: 1kB
+array([47.6, 47.5, 47.4, ..., 22.6, 22.5, 22.4], dtype=float32)
+Coordinates:
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+Attributes:
+    long_name:      latitude
+    units:          degrees_north
+    standard_name:  latitude 
+
+<xarray.DataArray 'p' (p: 16)> Size: 64B
+array([1000.,  975.,  950.,  925.,  900.,  850.,  800.,  700.,  600.,  500.,
+        400.,  300.,  250.,  200.,  150.,  100.], dtype=float32)
+Coordinates:
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+Attributes:
+    long_name:      pressure level
+    standard_name:  air_pressure
+    units:          hPa 
+
+<xarray.DataArray 'time' (time: 8)> Size: 64B
+array(['2023-08-21T00:00:00.000000000', '2023-08-21T03:00:00.000000000',
+       '2023-08-21T06:00:00.000000000', '2023-08-21T09:00:00.000000000',
+       '2023-08-21T12:00:00.000000000', '2023-08-21T15:00:00.000000000',
+       '2023-08-21T18:00:00.000000000', '2023-08-21T21:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      time
+    standard_name:  time 
+
+
+<< variables infomation >>
+
+<xarray.DataArray 'z' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+[7804544 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      geopotential height
+    units:          m
+    standard_name:  geopotential_height 
+
+<xarray.DataArray 'w' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+[7804544 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      vertical velocity in p
+    units:          Pa/s
+    standard_name:  lagrangian_tendency_of_air_pressure 
+
+<xarray.DataArray 'u' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+[7804544 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      eastward component of wind
+    units:          m/s
+    standard_name:  eastward_wind 
+
+<xarray.DataArray 'v' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+[7804544 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      northward component of wind
+    units:          m/s
+    standard_name:  northward_wind 
+
+<xarray.DataArray 'temp' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+[7804544 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      temperature
+    units:          K
+    standard_name:  air_temperature 
+
+<xarray.DataArray 'rh' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+[7804544 values with dtype=float64]
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+Attributes:
+    long_name:      relative humidity
+    units:          %
+    standard_name:  relative_humidity 
