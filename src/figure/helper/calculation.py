@@ -1,24 +1,21 @@
 import numpy as np
 
-from constants.constant import (
+from constants.configuration import (
     CONTOUR_INTERVAL,
     CONTOUR_LABEL_INTERVAL,
     CONTOUR_MAX,
     CONTOUR_MIN,
-    LAT_BOTTOM,
-    LAT_TOP,
-    LON_LEFT,
-    LON_RIGHT,
     SHADE_INTERVAL,
     SHADE_MAX,
     SHADE_MIN,
 )
+from constants.constant import LAT_BOTTOM, LAT_TOP, LON_LEFT, LON_RIGHT
 
 
 def calculate_figsize() -> tuple:
     lat_dif = LAT_TOP - LAT_BOTTOM
     lon_dif = LON_RIGHT - LON_LEFT
-    figsize = (7, 7 * float(float(lat_dif) / float(lon_dif)))
+    figsize = (8, 8 * float(float(lat_dif) / float(lon_dif)))
     return figsize
 
 
