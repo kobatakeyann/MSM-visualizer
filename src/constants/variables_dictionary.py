@@ -1,0 +1,16 @@
+VARIABLES_DICTIONARY = {
+    "z": "geopotential height",
+    "w": "vertical p velocity",
+    "u": "horizontal wind",
+    "v": "horizontal wind",
+    "temp": "temperature",
+    "rh": "relative humidity",
+    "psea": "sea level pressure",
+    "sp": "pressure",
+    "r1h": "rainfall in 1 hour",
+    "ncld_upper": "upper-level cloudiness",
+    "ncld_mid": "mid-level cloudiness",
+    "ncld_low": "low-level cloudiness",
+    "ncld": "cloud amount",
+    "dswrf": "downward short-wave radiation flux",
+}
