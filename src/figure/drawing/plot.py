@@ -6,22 +6,24 @@ import arrow
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 
-from constants.constant import (
+from constants.configuration import (
     CONTOUR_ADDITION,
     CONTOUR_MULTIPLIER,
     SHADE_ADDITION,
     SHADE_MULTIPLIER,
+    contour_plot,
+    shade_plot,
+    vector_plot,
+)
+from constants.constant import (
     VAR_INFO_XLOCATION,
     VAR_INFO_YLOCATION,
     VECTOR_MULTIPLIER,
     cbar_auto_ticks,
-    contour_plot,
     grid_line,
-    shade_plot,
-    vector_plot,
 )
 from data_handler.extraction import ArrayExtraction
-from figure.basemap.maker import make_base_map_ax
+from figure.basemap.maker import make_base_map
 from figure.drawing.methods import PlottingAxes
 from figure.helper.calculation import calculate_figsize
 from figure.helper.text import TextGenerator
@@ -35,7 +37,7 @@ class FigureFactory:
             (0.11, 0.15, 0.8, 0.8),
             projection=ccrs.PlateCarree(),
         )
-        ax_with_map = make_base_map_ax(ax)
+        make_base_map(ax)
         self.basefig = pickle.dumps(fig, protocol=pickle.HIGHEST_PROTOCOL)
         self.dataset = ArrayExtraction(utc_date, is_surface=is_surface)
         self.dataset.load_netcdf_data()
@@ -71,7 +73,9 @@ class FigureFactory:
         exe_utc_hour = 0
         while exe_utc_hour <= 21:
             exe_utc_datetime = arrow_dt.shift(hours=exe_utc_hour)
-            print(f"Now making {exe_utc_datetime} figure …")
+            print(
+                f"Now making {exe_utc_datetime.format('YYYYMMDD-HHmm')}UTC figure …"
+            )
             self.make_figure(exe_utc_datetime.datetime)
             exe_utc_hour += 3
         print("Successfully Completed!")
@@ -81,7 +85,7 @@ class FigureFactory:
         ax.plot_shading(
             self.dataset.lon,
             self.dataset.lat,
-            self.dataset.shade_array[:, :, time_index] * SHADE_MULTIPLIER
+            self.dataset.shade_array[time_index, :, :] * SHADE_MULTIPLIER
             + SHADE_ADDITION,
         )
         ax.plot_colorbar(is_auto_ticks=cbar_auto_ticks)
@@ -97,7 +101,7 @@ class FigureFactory:
         ax.plot_contour(
             self.dataset.lon,
             self.dataset.lat,
-            self.dataset.contour_array[:, :, time_index] * CONTOUR_MULTIPLIER
+            self.dataset.contour_array[time_index, :, :] * CONTOUR_MULTIPLIER
             + CONTOUR_ADDITION,
         )
         ax.plot_text(
@@ -111,8 +115,8 @@ class FigureFactory:
         ax.plot_vector(
             self.dataset.lon,
             self.dataset.lat,
-            self.dataset.u_array[:, :, time_index] * VECTOR_MULTIPLIER,
-            self.dataset.v_array[:, :, time_index] * VECTOR_MULTIPLIER,
+            self.dataset.u_array[time_index, :, :] * VECTOR_MULTIPLIER,
+            self.dataset.v_array[time_index, :, :] * VECTOR_MULTIPLIER,
         )
         ax.plot_legend_vector()
         ax.plot_text(
