@@ -34,4 +34,4 @@ VAR_INFO_XLOCATION = -0.05
 VAR_INFO_YLOCATION = -0.125
 
 # image quality
-DPI = 600
+DPI = 300
