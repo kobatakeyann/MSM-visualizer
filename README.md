@@ -1,7 +1,8 @@
 # MSM Visualizer
 3時間毎の大気環境場図を作成します。
 
-![](sample_figure.jpg)
+![](sample_pressure_plain_figure.jpg)
+![](sample_surface_figure.jpg)
 
 
 # 仮想環境のactivate
