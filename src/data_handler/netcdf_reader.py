@@ -1,14 +1,8 @@
 import numpy as np
 import xarray as xr
 
-from constants.constant import (
-    LAT_BOTTOM,
-    LAT_TOP,
-    LON_LEFT,
-    LON_RIGHT,
-    PRESSURE_PLAIN,
-    is_surface,
-)
+from constants.configuration import PRESSURE_PLAIN, is_surface
+from constants.constant import LAT_BOTTOM, LAT_TOP, LON_LEFT, LON_RIGHT
 
 
 class NetcdfHandler:
@@ -20,9 +14,12 @@ class NetcdfHandler:
         self,
         ds: xr.Dataset,
     ) -> xr.Dataset:
-        if not is_surface:
+        if is_surface:
+            hours_of_initial_value = [hour for hour in range(0, 24, 3)]
+            ds = ds.isel(time=hours_of_initial_value)
+            pass
+        else:
             ds = ds.sel(p=PRESSURE_PLAIN)
-        ds = ds.isel(time=0)
         ds = ds.sel(
             lon=slice(LON_LEFT, LON_RIGHT), lat=slice(LAT_TOP, LAT_BOTTOM)
         )
