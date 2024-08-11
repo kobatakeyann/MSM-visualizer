@@ -9,19 +9,10 @@ from matplotlib.colors import Colormap, ListedColormap
 from matplotlib.figure import Figure
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-from constants.constant import (
-    CBAR_EXTENTION,
-    CBAR_LABEL_LOCATION,
-    CBAR_LABEL_SIZE,
-    CBAR_TICKS_BASE,
-    CBAR_TICKS_INTERVAL,
+from constants.configuration import (
     CBAR_UNIT,
     COLOR_MAP_NAME,
     CONTOUR_COLOR,
-    CONTOUR_LABEL_SIZE,
-    CONTOUR_WIDTH,
-    GRIDLINE_COLOR,
-    GRIDLINE_WIDTH,
     SHADE_INTERVAL,
     SHADE_MAX,
     SHADE_MIN,
@@ -31,9 +22,21 @@ from constants.constant import (
     VECTOR_LEDEND_VALUE,
     VECTOR_LEGEND_NAME,
     VECTOR_REDUCTION_SCALE,
+    plot_contour_label,
+)
+from constants.constant import (
+    CBAR_EXTENTION,
+    CBAR_LABEL_LOCATION,
+    CBAR_LABEL_SIZE,
+    CBAR_TICKS_BASE,
+    CBAR_TICKS_INTERVAL,
+    CONTOUR_LABEL_SIZE,
+    CONTOUR_WIDTH,
+    DPI,
+    GRIDLINE_COLOR,
+    GRIDLINE_WIDTH,
     WHITE_PART_NUM_FROM_MIDDLE,
     paint_all,
-    plot_contour_label,
 )
 from figure.basemap.methods import GeoAxes
 from figure.helper.calculation import (
@@ -63,7 +66,7 @@ class BaseAxes:
     def save_figure(self, fig: Figure, save_dir: str, filename: str) -> None:
         os.makedirs(save_dir, exist_ok=True)
         out_path = f"{save_dir}/{filename}"
-        fig.savefig(out_path, dpi=300)
+        fig.savefig(out_path, dpi=DPI)
 
 
 class PlottingAxes(BaseAxes):
