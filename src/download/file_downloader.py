@@ -8,5 +8,5 @@ def download_file(url: str, save_dir: str) -> None:
         url (str): URL of the file
         save_dir (str): local directory
     """
-    commands = ["wget", "-p", save_dir, url]
+    commands = ["wget", "-P", save_dir, url]
     subprocess.run(commands)
