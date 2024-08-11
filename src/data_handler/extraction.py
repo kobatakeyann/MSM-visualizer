@@ -1,7 +1,7 @@
 import os
 from datetime import date
 
-from constants.constant import (
+from constants.configuration import (
     CONTOUR_VARNAME,
     PRESSURE_PLAIN,
     SHADE_VARNAME,
@@ -11,6 +11,7 @@ from constants.constant import (
     shade_plot,
     vector_plot,
 )
+from constants.variables_dictionary import VARIABLES_DICTIONARY
 from data_handler.netcdf_reader import NetcdfHandler
 from download.file_downloader import download_file
 from helper.time import PaddingDatetime
@@ -32,12 +33,14 @@ class ArrayExtraction:
         if is_surface:
             stored_nc_dir = "surface"
             self.nc_identifier = "S"
+            self.plain = "surface"
             self.saving_img_dir = generate_path(
                 f"/img/{self.year}/{self.month}/{self.day}/surface/"
             )
         else:
             stored_nc_dir = "pressure_plain"
             self.nc_identifier = "P"
+            self.plain = f"{PRESSURE_PLAIN}hPa"
             self.saving_img_dir = generate_path(
                 f"/img/{self.year}/{self.month}/{self.day}/{PRESSURE_PLAIN}hpa/"
             )
@@ -59,19 +62,25 @@ class ArrayExtraction:
         self.lon = nc_handler.lon
         self.lat = nc_handler.lat
         if shade_plot:
-            self.shade_var = SHADE_VARNAME
+            self.shade_var = (
+                f"{self.plain} {VARIABLES_DICTIONARY[SHADE_VARNAME]}"
+            )
             self.shade_array = nc_handler.extract_data_array(
                 var_name=SHADE_VARNAME
             )
             self.saving_img_dir += SHADE_VARNAME
         if contour_plot:
-            self.contour_var = CONTOUR_VARNAME
+            self.contour_var = (
+                f"{self.plain} {VARIABLES_DICTIONARY[CONTOUR_VARNAME]}"
+            )
             self.contour_array = nc_handler.extract_data_array(
                 var_name=CONTOUR_VARNAME
             )
             self.saving_img_dir += f"_{CONTOUR_VARNAME}"
         if vector_plot:
-            self.vector_var = f"{U_VEXTOR_VARNAME}, {V_VEXTOR_VARNAME}"
+            self.vector_var = (
+                f"{self.plain} {VARIABLES_DICTIONARY[U_VEXTOR_VARNAME]}"
+            )
             self.u_array = nc_handler.extract_data_array(
                 var_name=U_VEXTOR_VARNAME
             )
