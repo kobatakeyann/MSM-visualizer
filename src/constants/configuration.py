@@ -10,7 +10,7 @@ SHADE_MIN = -12
 SHADE_INTERVAL = 1
 SHADE_MULTIPLIER = 1
 SHADE_ADDITION = -273.15
-COLOR_MAP_NAME = "Blues_r"  # "YlOrRd"
+COLOR_MAP_NAME = "Blues_r"
 CBAR_UNIT = "[℃]"
 
 # contour
