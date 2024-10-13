@@ -43,7 +43,7 @@ def calc_wind_speed(u: np.ndarray, v: np.ndarray) -> np.ndarray:
 
 
 def calc_water_vapor_flux(
-    u: np.ndarray, v: np.ndarray, q: np.ndarray, p: np.ndarray
+    u: np.ndarray, v: np.ndarray, q: np.ndarray
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     flux_u = u * q
     flux_v = v * q

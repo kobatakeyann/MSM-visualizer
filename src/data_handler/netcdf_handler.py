@@ -21,7 +21,6 @@ class NetcdfHandler:
         ds = xr.open_dataset(netcdf_path)
         if is_additional_variable:
             ds = self.add_other_variables(ds)
-            print(ds["wv_flux_div"])
         self.ds = self.slice_dataset(ds)
 
     def add_other_variables(self, ds: xr.Dataset) -> xr.Dataset:
@@ -33,8 +32,8 @@ class NetcdfHandler:
         lon = ds["lon"].values
         lat = ds["lat"].values
         mixing_ratio = calc_mixing_ratio(rh, temprature, p)
-        wv_flux_u, wv_flux_v, wv_flux_u = calc_water_vapor_flux(
-            u, v, mixing_ratio, p
+        wv_flux_u, wv_flux_v, wv_flux_mag = calc_water_vapor_flux(
+            u, v, mixing_ratio
         )
         ds = self.add_variable_to_dataset(
             ds,
@@ -60,7 +59,7 @@ class NetcdfHandler:
         ds = self.add_variable_to_dataset(
             ds,
             var_name="wv_flux_mag",
-            var_array=wv_flux_u,
+            var_array=wv_flux_mag,
             var_unit="g m kg^-1 s^-1",
             var_long_name="magnitude of water vapor flux",
         )
