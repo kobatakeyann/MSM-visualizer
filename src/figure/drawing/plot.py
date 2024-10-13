@@ -16,6 +16,7 @@ from constants.configuration import (
     vector_plot,
 )
 from constants.constant import (
+    GIF_NAME,
     VAR_INFO_XLOCATION,
     VAR_INFO_YLOCATION,
     VECTOR_MULTIPLIER,
@@ -27,6 +28,7 @@ from figure.basemap.maker import make_base_map
 from figure.drawing.methods import PlottingAxes
 from figure.helper.calculation import calculate_figsize
 from figure.helper.text import TextGenerator
+from gif.gif import make_gif_from_imgs
 from helper.time import PaddingDatetime
 
 
@@ -78,6 +80,11 @@ class FigureFactory:
             )
             self.make_figure(exe_utc_datetime.datetime)
             exe_utc_hour += 3
+        print("Now making gif …")
+        make_gif_from_imgs(
+            self.dataset.saving_img_dir,
+            f"{self.dataset.saving_img_dir}/{GIF_NAME}.gif",
+        )
         print("Successfully Completed!")
 
     def plot_shade(self, ax: PlottingAxes, hour: int) -> None:

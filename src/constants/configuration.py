@@ -1,17 +1,20 @@
 # surface or pressure data
 is_surface = False
-PRESSURE_PLAIN = 500
+PRESSURE_PLAIN = 950
+
+# whether to plot additional variable or not
+is_additional_variable = True
 
 # shade
 shade_plot = True
-SHADE_VARNAME = "temp"
-SHADE_MAX = -4
-SHADE_MIN = -12
-SHADE_INTERVAL = 1
+SHADE_VARNAME = "mixing_ratio"
+SHADE_MAX = 22
+SHADE_MIN = 14
+SHADE_INTERVAL = 0.5
 SHADE_MULTIPLIER = 1
-SHADE_ADDITION = -273.15
-COLOR_MAP_NAME = "Blues_r"
-CBAR_UNIT = "[℃]"
+SHADE_ADDITION = 0
+COLOR_MAP_NAME = "Blues"
+CBAR_UNIT = "[g/kg]"
 
 # contour
 contour_plot = True

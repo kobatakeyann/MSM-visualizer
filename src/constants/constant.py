@@ -35,3 +35,7 @@ VAR_INFO_YLOCATION = -0.125
 
 # image quality
 DPI = 300
+
+# gif
+GIF_INTERVAL_TIME = 900
+GIF_NAME = "horizontal_cross_section"

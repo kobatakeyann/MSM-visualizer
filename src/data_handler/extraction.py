@@ -12,7 +12,7 @@ from constants.configuration import (
     vector_plot,
 )
 from constants.variables_dictionary import VARIABLES_DICTIONARY
-from data_handler.netcdf_reader import NetcdfHandler
+from data_handler.netcdf_handler import NetcdfHandler
 from download.file_downloader import download_file
 from helper.time import PaddingDatetime
 from util.path import generate_path

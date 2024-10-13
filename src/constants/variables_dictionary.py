@@ -13,4 +13,12 @@ VARIABLES_DICTIONARY = {
     "ncld_low": "low-level cloudiness",
     "ncld": "cloud amount",
     "dswrf": "downward short-wave radiation flux",
+    "mixing_ratio": "water vapor mixing ratio",
+    "wv_concentration": "water vapor concentration",
+    "wind_speed": "wind speed",
+    "wv_flux_mag": "magnitude of water vapor flux",
+    "wv_flux_u": "u component of water vapor flux",
+    "wv_flux_v": "v component of water vapor flux",
+    "wind_div": "horizontal wind divergence",
+    "wv_flux_div": "water vapor flux divergence",
 }

@@ -19,7 +19,14 @@ Data variables:
     v        (time, p, lat, lon) float64 62MB ...
     temp     (time, p, lat, lon) float64 62MB ...
     rh       (time, p, lat, lon) float64 62MB ... 
-
+    mixing_ratio      (time, p, lat, lon) float64
+    wv_concentration  (time, p, lat, lon) float64
+    wind_speed        (time, p, lat, lon) float64
+    wv_flux_mag       (time, p, lat, lon) float64
+    wv_flux_u         (time, p, lat, lon) float64
+    wv_flux_v         (time, p, lat, lon) float64
+    wind_div          (time, p, lat, lon) float64
+    wv_flux_div       (time, p, lat, lon) float64
 
 ################### Detail ###################
 << dimension infomation >>
@@ -112,74 +119,150 @@ Attributes:
 
 << variables infomation >>
 
-<xarray.DataArray 'z' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+<xarray.DataArray 'z' (time: 8, p: 16, lat: 253, lon: 241)>
 [7804544 values with dtype=float64]
 Coordinates:
-  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
-  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
-  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
-  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
 Attributes:
     long_name:      geopotential height
     units:          m
-    standard_name:  geopotential_height 
+    standard_name:  geopotential_height
 
-<xarray.DataArray 'w' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+<xarray.DataArray 'w' (time: 8, p: 16, lat: 253, lon: 241)>
 [7804544 values with dtype=float64]
 Coordinates:
-  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
-  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
-  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
-  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
 Attributes:
     long_name:      vertical velocity in p
     units:          Pa/s
-    standard_name:  lagrangian_tendency_of_air_pressure 
+    standard_name:  lagrangian_tendency_of_air_pressure
 
-<xarray.DataArray 'u' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
-[7804544 values with dtype=float64]
+<xarray.DataArray 'u' (time: 8, p: 16, lat: 253, lon: 241)>
 Coordinates:
-  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
-  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
-  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
-  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
 Attributes:
     long_name:      eastward component of wind
     units:          m/s
-    standard_name:  eastward_wind 
+    standard_name:  eastward_wind
 
-<xarray.DataArray 'v' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
-[7804544 values with dtype=float64]
+<xarray.DataArray 'v' (time: 8, p: 16, lat: 253, lon: 241)>
 Coordinates:
-  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
-  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
-  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
-  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
 Attributes:
     long_name:      northward component of wind
     units:          m/s
-    standard_name:  northward_wind 
+    standard_name:  northward_wind
 
-<xarray.DataArray 'temp' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
-[7804544 values with dtype=float64]
+<xarray.DataArray 'temp' (time: 8, p: 16, lat: 253, lon: 241)>
 Coordinates:
-  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
-  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
-  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
-  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
 Attributes:
     long_name:      temperature
     units:          K
-    standard_name:  air_temperature 
+    standard_name:  air_temperature
 
-<xarray.DataArray 'rh' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
-[7804544 values with dtype=float64]
+<xarray.DataArray 'rh' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:      relative humidity
+    units:          %
+    standard_name:  relative_humidity
+
+<xarray.DataArray 'mixing_ratio' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:  water vapor mixing ratio
+    units:      g/kg
+
+<xarray.DataArray 'wv_concentration' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:  water vapor concentration
+    units:      g/m^3
+
+<xarray.DataArray 'wind_speed' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:  water speed
+    units:      m/s
+
+<xarray.DataArray 'wv_flux_mag' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:  magnitude of water vapor flux
+    units:      g m kg^-1 s^-1
+
+<xarray.DataArray 'wv_flux_u' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:  u component of water vapor flux
+    units:      g m kg^-1 s^-1
+
+<xarray.DataArray 'wv_flux_v' (time: 8, p: 16, lat: 253, lon: 241)>
+Coordinates:
+  * lon      (lon) float32 120.0 120.1 120.2 120.4 ... 149.6 149.8 149.9 150.0
+  * lat      (lat) float32 47.6 47.5 47.4 47.3 47.2 ... 22.8 22.7 22.6 22.5 22.4
+  * p        (p) float32 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 2015-08-28 ... 2015-08-28T21:00:00
+Attributes:
+    long_name:  v component of water vapor flux
+    units:      g m kg^-1 s^-1
+
+<xarray.DataArray 'wind_div' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
 Coordinates:
   * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
   * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
   * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
-  * time     (time) datetime64[ns] 64B 2023-08-21 ... 2023-08-21T21:00:00
+  * time     (time) datetime64[ns] 64B 2023-07-15 ... 2023-07-15T21:00:00
 Attributes:
-    long_name:      relative humidity
-    units:          %
-    standard_name:  relative_humidity 
+    long_name:  horizontal wind divergence
+    units:      s^-1
+
+<xarray.DataArray 'wv_flux_div' (time: 8, p: 16, lat: 253, lon: 241)> Size: 62MB
+Coordinates:
+  * lon      (lon) float32 964B 120.0 120.1 120.2 120.4 ... 149.8 149.9 150.0
+  * lat      (lat) float32 1kB 47.6 47.5 47.4 47.3 47.2 ... 22.7 22.6 22.5 22.4
+  * p        (p) float32 64B 1e+03 975.0 950.0 925.0 ... 250.0 200.0 150.0 100.0
+  * time     (time) datetime64[ns] 64B 2023-07-15 ... 2023-07-15T21:00:00
+Attributes:
+    long_name:  divergence of horizontal water vapor flux
+    units:      g kg^-1 s^-1
