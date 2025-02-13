@@ -6,20 +6,10 @@
 
 
 # 仮想環境のactivate
-```
-python3 -m venv .venv
-```
-
-```
-#Unix
+via venv
+```bash
+python -m venv .venv
 source .venv/bin/activate
-#Windows
-source .venv/Scripts/activate
-```
-
-# Installation
-パッケージのインストール
-```
 pip install -r requirements.txt
 ```
 
